@@ -1,7 +1,7 @@
 %define	module	SQL-Statement
 %define	name	perl-%{module}
 %define	version	1.15
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Summary:	%{module} module for perl (String_Lang_Text_Proc/SQL)
@@ -29,6 +29,8 @@ find -type f | xargs chmod 644
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
+
+%check
 make test
 
 %install
