@@ -14,6 +14,7 @@ Source0:	http://search.cpan.org/CPAN/authors/id/J/JZ/JZUCKER/%{module}-%{version
 %if %{mdkversion} < 1010
 Buildrequires:perl-devel
 %endif
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
 %description
