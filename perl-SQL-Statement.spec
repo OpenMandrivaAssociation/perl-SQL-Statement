@@ -1,7 +1,7 @@
 %define	module	SQL-Statement
 %define	name	perl-%{module}
 %define	version	1.15
-%define	release	%mkrel 2
+%define	release	%mkrel 4
 
 Name:		%{name}
 Summary:	%{module} module for perl (String_Lang_Text_Proc/SQL)
