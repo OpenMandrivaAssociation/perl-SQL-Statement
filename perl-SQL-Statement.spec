@@ -12,7 +12,7 @@ Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/SQL/%{module}-%{version}.tar.gz
 BuildRequires:  perl(Clone)
-BuildRequires:  perl(Params::Utils)
+BuildRequires:  perl(Params::Util)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
