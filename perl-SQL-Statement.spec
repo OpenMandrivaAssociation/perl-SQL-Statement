@@ -1,24 +1,25 @@
 %define	module	SQL-Statement
 %define	name	perl-%{module}
-%define	version	1.15
-%define	release	%mkrel 4
+%define	version	1.17
+%define	release	%mkrel 1
 
 Name:		%{name}
-Summary:	%{module} module for perl (String_Lang_Text_Proc/SQL)
+Summary:	SQL parsing and processing engine
 Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
-Source0:	http://search.cpan.org/CPAN/authors/id/J/JZ/JZUCKER/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-Buildrequires:perl-devel
-%endif
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source:     http://www.cpan.org/modules/by-module/SQL/%{module}-%{version}.tar.gz
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
-%{module} is a Perl module engine for parsing and processing SQL data.
+The SQL::Statement module implements a pure Perl SQL parsing and execution
+engine. While it by no means implements full ANSI standard, it does support
+many features including column and table aliases, built-in and user-defined
+functions, implicit and explicit joins, complexly nested search conditions, and
+other features.
 
 %prep 
 %setup -q -n %{module}-%{version}
@@ -34,15 +35,15 @@ find -type f | xargs chmod 644
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %{makeinstall_std}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc README Changes
-%{perl_vendorlib}/SQL/*
+%{perl_vendorlib}/SQL
 %{_mandir}/*/*
 
