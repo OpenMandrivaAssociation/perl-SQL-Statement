@@ -11,6 +11,7 @@ License:	GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/SQL/%{module}-%{version}.tar.gz
+BuildRequires:  perl(Clone)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
