@@ -1,17 +1,19 @@
 %define upstream_name       SQL-Statement
-%define upstream_version    1.20
+%define upstream_version 1.22
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
+
 Summary:	SQL parsing and processing engine
 License:	GPL
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.gz
-Patch:      SQL-Statement-1.20-fix-tests.patch
+Source0:    http://www.cpan.org/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  perl(Clone)
 BuildRequires:  perl(Params::Util)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
@@ -24,13 +26,9 @@ other features.
 
 %prep 
 %setup -q -n %{upstream_name}-%{upstream_version} 
-%patch -p 1
-# test fails currently
-# http://rt.cpan.org/Public/Bug/Display.html?id=47292
-rm -f t/05create.t
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+SQL_STATEMENT_WARN_UPDATE=sure %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -48,4 +46,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{perl_vendorlib}/SQL
 %{_mandir}/*/*
-
