@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 1.405
-Release:	1
+Release:	2
 
 Summary:	SQL parsing and processing engine
 License:	GPL
