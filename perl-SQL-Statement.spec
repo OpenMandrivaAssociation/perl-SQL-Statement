@@ -8,7 +8,7 @@ Release:	3
 Summary:	SQL parsing and processing engine
 License:	GPL
 Group:		Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/SQL/SQL-Statement-1.405.tar.gz
 
 BuildRequires:	perl-devel
