@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/SQL/SQL-Statement-1.405.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Clone)
 BuildRequires:	perl(Params::Util)
