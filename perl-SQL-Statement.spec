@@ -1,15 +1,15 @@
 %define upstream_name       SQL-Statement
-%define upstream_version 1.405
+%define upstream_version 1.414
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.405
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	SQL parsing and processing engine
 License:	GPL
 Group:		Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/SQL/SQL-Statement-1.405.tar.gz
+Url:        https://github.com/perl5-dbi/SQL-Statement
+Source0:	https://cpan.metacpan.org/authors/id/R/RE/REHSACK/SQL-Statement-1.414.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
